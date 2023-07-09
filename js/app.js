@@ -30,7 +30,14 @@ sliderMain.controller.control = sliderBg;
 
 document.querySelectorAll('.slider__item').forEach(item => {
 	item.addEventListener('click', event => {
-		item.classList.toggle('opened')
+		if (item.classList.toggle('opened')) {
+			document.addEventListener('click', (e) => {
+				const withinBoundaries = e.composedPath().includes(item);
+				if (!withinBoundaries) {
+					item.classList.remove('opened');
+				}
+			})
+		}
 	})
 });
 

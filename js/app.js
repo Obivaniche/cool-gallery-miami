@@ -49,7 +49,7 @@ sliderMain.on('slideChange', e => {
 		: desc.classList.remove('hidden')
 });
 
-let el = document.getElementById('btn-play');
+let el = document.querySelector('.player-btn');
 let playing = false; // текущее состояние плеера
 
 let player = new Audio('../music/Rockstar Games - GTA Vice City Theme.mp3');
@@ -69,4 +69,4 @@ function playPause() {
 	el.classList.add('pause');
   }
   playing = !playing;
-}
+};

@@ -49,24 +49,23 @@ sliderMain.on('slideChange', e => {
 		: desc.classList.remove('hidden')
 });
 
-let el = document.querySelector('.player-btn');
-let playing = false; // текущее состояние плеера
+let el = document.getElementById('player-btn');
+let playing = false;
 
 let player = new Audio('../music/Rockstar Games - GTA Vice City Theme.mp3');
 player.preload = "auto";
-player.addEventListener('ended', function(){ // слушаем окончание трека
+player.addEventListener('ended', el => {
   playing = false;
   el.classList.remove('pause');
 });
-el.addEventListener('click', playPause); // слушаем нажатие на кнопку
 
-function playPause() {
-  if( playing) {
-    player.pause();
-	el.classList.remove('pause');
-  } else {
-    player.play();
-	el.classList.add('pause');
-  }
-  playing = !playing;
-};
+el.addEventListener('click', event => {
+	if( playing) {
+		player.pause();
+		el.classList.remove('pause');
+	  } else {
+		player.play();
+		el.classList.add('pause');
+	  }
+	  playing = !playing;
+});

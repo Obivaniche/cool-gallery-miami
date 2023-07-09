@@ -136,3 +136,32 @@ html {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+.btn {
+	position: absolute;
+	z-index: 1;
+	top: 5vh;
+	right: 5vw;
+	width: 0;
+	height: 0;
+	border-top: calc(var(--index) * 1) solid transparent;
+	border-left: calc(var(--index) * 2) solid orange;
+	border-bottom: calc(var(--index) * 1) solid transparent;
+	border-right: none;
+	background: transparent;
+	cursor: pointer;
+	transition: var(--transition);
+	will-change: transform;
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+.btn.pause {
+	width: calc(var(--index) * .5);
+	height: calc(var(--index) * 1.98);
+	border-style: double;
+	border-width: 0px 0px 0px calc(var(--index) * 2);
+	border-color: orange;
+}

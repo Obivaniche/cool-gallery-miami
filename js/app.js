@@ -52,7 +52,7 @@ sliderMain.on('slideChange', e => {
 let el = document.getElementById('player-btn');
 let playing = false;
 
-let player = new Audio('https://github.com/Obivaniche/cool-gallery-miami/blob/main/music/Rockstar%20Games%20-%20GTA%20Vice%20City%20Theme.mp3');
+let player = new Audio('https://github.com/Obivaniche/cool-gallery-miami/raw/main/music/Rockstar%20Games%20-%20GTA%20Vice%20City%20Theme.mp3');
 player.preload = "auto";
 player.addEventListener('ended', el => {
   playing = false;

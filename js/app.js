@@ -48,24 +48,3 @@ sliderMain.on('slideChange', e => {
 		? desc.classList.add('hidden')
 		: desc.classList.remove('hidden')
 });
-
-let el = document.getElementById('player-btn');
-let playing = false;
-
-let player = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
-player.preload = "auto";
-player.addEventListener('ended', el => {
-  playing = false;
-  el.classList.remove('pause');
-});
-
-el.addEventListener('click', event => {
-	if( playing) {
-		player.pause();
-		el.classList.remove('pause');
-	  } else {
-		player.play();
-		el.classList.add('pause');
-	  }
-	  playing = !playing;
-});

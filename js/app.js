@@ -52,7 +52,7 @@ sliderMain.on('slideChange', e => {
 let el = document.getElementById('player-btn');
 let playing = false;
 
-let player = new Audio('https://music.yandex.ru/album/15145815/track/81655652');
+let player = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
 player.preload = "auto";
 player.addEventListener('ended', el => {
   playing = false;

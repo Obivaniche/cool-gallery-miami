@@ -36,9 +36,9 @@ document.querySelectorAll('.slider__item').forEach(item => {
 				if (!withinBoundaries) {
 					item.classList.remove('opened');
 				}
-			})
+			});
 		}
-	})
+	});
 });
 
 let desc = document.querySelector('.description');
@@ -49,18 +49,22 @@ sliderMain.on('slideChange', e => {
 		: desc.classList.remove('hidden')
 });
 
-let soundButton = document.querySelector('.soundbutton'),
-		audio = document.querySelector('.audio')
+let soundButton = document.querySelector('.soundbutton');
+audio = document.querySelector('.audio');
 
 soundButton.addEventListener('click', e => {
-	soundButton.classList.toggle('paused')
-	audio.paused ? audio.play() : audio.pause()
-})
+	soundButton.classList.toggle('paused');
+	audio.paused
+		? audio.play()
+		: audio.pause();
+});
 
-window.onfocus = function() {
-	soundButton.classList.contains('paused') ? audio.pause() : audio.play()
-}
+window.onfocus = function () {
+	soundButton.classList.contains('paused')
+		? audio.pause()
+		: audio.play();
+};
 
-window.onblur = function() {
-	audio.pause()
-}
+window.onblur = function () {
+	audio.pause();
+};

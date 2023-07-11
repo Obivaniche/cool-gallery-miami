@@ -136,3 +136,15 @@ html {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+.soundbutton {
+	position: fixed;
+	bottom: 3vh;
+	left: 3vw;
+	cursor: pointer;
+	width: calc(var(--index) * 3.5);
+	transition: .25s ease;
+}
+.soundbutton.paused {
+	opacity: .25;
+}
